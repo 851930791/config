@@ -1,5 +1,18 @@
 server:
-  port: 8000
+  port: 8010
 spring:
   application:
     name: helloWorld
+  cloud:
+    consul:
+      host: 10.10.1.181
+      port: 8500
+      discovery:
+        register: true
+        hostname: 10.10.1.187
+#        port: 8500
+        serviceName: ${spring.application.name}
+        healthCheckPath: /actuator/health
+        healthCheckInterval: 5s
+        tags: urlprefix-/${spring.application.name}
+        instanceId: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
