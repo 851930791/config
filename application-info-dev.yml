@@ -1,0 +1,5 @@
+server:
+  port: 8000
+com:
+  zoupng:
+    message: helloWorld
