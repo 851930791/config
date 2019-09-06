@@ -2,4 +2,4 @@ server:
   port: 8000
 com:
   zoupng:
-    message: helloWorld1111
+    message: helloWorld2222
